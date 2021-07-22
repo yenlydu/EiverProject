@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import UIKit
+
+
+
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Text("enter")
+        }.navigationBarTitle(Text("Search")).onAppear(){
+            NavigationLink(destination: HomeView(films: [])) {}
+            
+        }
     }
 }
 
