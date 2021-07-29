@@ -19,20 +19,22 @@ extension HomeView{
         func getFilms(){
             print("entering group")
             let group = DispatchGroup()
-            group.enter()
             var t : [Film] = []
             api.loadData({[weak self] film in
+                group.enter()
                 if let film = film {
                     t = film
+                    print ("film[0].youtubeTrailer?.count", film[0].youtubeTrailer?.count)
                     print ("leavz")
                     group.leave()
+                    group.notify(queue: .main) {
+                        print("ezrf", t.count)
+                        self!.films = t
+                        print ("t" , t[0].youtubeTrailer?.count)
+                    }
                 }
             })
-            group.wait()
-            group.notify(queue: .main) {
-                print("ezrf", t.count)
-            }
-            films = t
+
         }
     }
 }

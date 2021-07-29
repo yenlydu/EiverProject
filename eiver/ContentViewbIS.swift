@@ -4,7 +4,6 @@
 //
 //  Created by Duong Yen-Ly on 22/07/2021.
 //
-import AVKit
 import SwiftUI
 
 protocol DataServiceYtb
@@ -41,12 +40,12 @@ class GetYtb : ObservableObject, DataServiceYtb
                 }
                 do {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
-                    let jsonData = try JSONSerialization.data(withJSONObject: movieData, options: [])
-//                    books = try! JSONDecoder().decode([FilmYoutubeVideo].self, from: jsonData)
-//                    print (books)
+                    let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"], options: [])
+                    books = try! JSONDecoder().decode([FilmYoutubeVideo].self, from: jsonData)
+                    print (books)
 
-                    print ("entering moviedata ", movieData["results"])
-                    return completionHandler(nil)
+//                    print ("entering moviedata ", movieData["results"])
+                    return completionHandler(books)
                 } catch let error as NSError {
                     print(error)
                 }
@@ -65,50 +64,48 @@ extension UIImage {
         guard let outputImage = filter.outputImage else { return nil }
 
         var bitmap = [UInt8](repeating: 0, count: 4)
-        let context = CIContext(options: [.workingColorSpace: kCFNull])
+        let context = CIContext(options: [.workingColorSpace: kCFNull as Any])
         context.render(outputImage, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: nil)
 
         return UIColor(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: CGFloat(bitmap[3]) / 255)
     }
 }
+
+
 struct ContentViewbIS: View {
-    var film: Film?
-    var api = GetYtb()
     
-    var image : UIImage = UIImage()
+    private var film: Film?
+    private var image : UIImage?
+
     init(film: Film?) {
         self.film = film
         let url = URL(string: "https://image.tmdb.org/t/p/original/\(film!.poster_path)")!
         let data = try? Data(contentsOf: url)
 
         if let imageData = data {
-            image = UIImage(data: imageData)!
-        }
-        api.loadData(id: String(film!.id), {film in
-            if let film = film {
-            }
-        })
+            self.image = UIImage(data: imageData)!
+    }
     }
 
     var body: some View {
 //        NavigationView{
         ZStack {
-            Color(image.averageColor!).opacity(0.3).ignoresSafeArea()
+            Color(image?.averageColor ?? .black).opacity(0.3).ignoresSafeArea()
           VStack {
-            Image(uiImage: image)
+            Image(uiImage: image ?? UIImage())
                 .resizable()        .cornerRadius(10).padding()
                 .frame(width: 200.0, height: 300.0)
 
             HStack{
                 Text("Release date : ").font(.system(size: 20))
-                Text (film!.release_date ?? "nIL").italic()
+                Text (film!.release_date).italic()
             }.padding(.bottom)
             Text(film?.overview ?? "No description").padding()
-            let player = AVPlayer(url: URL(string: "https://www.youtube.com/watch?v=SUXWAEX2jlg")!)
-            VideoPlayer(player: player).onAppear(){
-                player.play()
-            }
+            if (film?.youtubeTrailer?.count != 0) {
+                Text(String((film?.youtubeTrailer!.count)!))
+//                VideoView(videoId: (film?.youtubeTrailer![0].key)!).frame(maxWidth: UIScreen.main.bounds.width * 0.8,minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: UIScreen.main.bounds.height * 0.3).padding()
 
+           }
           } // VStack
         } // ZStack
     }
@@ -116,7 +113,6 @@ struct ContentViewbIS: View {
 
 struct ContentViewbIS_Previews: PreviewProvider {
     static var previews: some View {
-        
         ContentViewbIS(film: nil)
     }
 }

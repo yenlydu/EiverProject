@@ -13,6 +13,7 @@
 		1860208226A9739A000C9DDB /* ContentViewbIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860208126A9739A000C9DDB /* ContentViewbIS.swift */; };
 		1860208826ADF7DC000C9DDB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860208726ADF7DC000C9DDB /* HomeViewModel.swift */; };
 		1860208B26AEB771000C9DDB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1860208A26AEB771000C9DDB /* UserNotifications.framework */; };
+		1883412C26B3060900FAE199 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412B26B3060900FAE199 /* VideoView.swift */; };
 		1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E60B26A1E8CB00846C2F /* eiverApp.swift */; };
 		1896E61026A1E8CE00846C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1896E60F26A1E8CE00846C2F /* Assets.xcassets */; };
 		1896E61326A1E8CE00846C2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1896E61226A1E8CE00846C2F /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		1860208126A9739A000C9DDB /* ContentViewbIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewbIS.swift; sourceTree = "<group>"; };
 		1860208726ADF7DC000C9DDB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1860208A26AEB771000C9DDB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		1883412B26B3060900FAE199 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		1896E60826A1E8CB00846C2F /* eiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1896E60B26A1E8CB00846C2F /* eiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eiverApp.swift; sourceTree = "<group>"; };
 		1896E60F26A1E8CE00846C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				1860207A26A4C219000C9DDB /* FilmsDetailView.swift */,
 				1860207826A430A2000C9DDB /* HomeView.swift */,
+				1883412B26B3060900FAE199 /* VideoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1860207B26A4C219000C9DDB /* FilmsDetailView.swift in Sources */,
+				1883412C26B3060900FAE199 /* VideoView.swift in Sources */,
 				1860208826ADF7DC000C9DDB /* HomeViewModel.swift in Sources */,
 				1860208226A9739A000C9DDB /* ContentViewbIS.swift in Sources */,
 				1860208026A4C272000C9DDB /* FilmModel.swift in Sources */,
@@ -474,7 +478,7 @@
 				DEVELOPMENT_TEAM = FTHAC7S6RW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = eiver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,7 +500,7 @@
 				DEVELOPMENT_TEAM = FTHAC7S6RW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = eiver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

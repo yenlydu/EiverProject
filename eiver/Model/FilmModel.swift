@@ -14,6 +14,7 @@ struct Film: Codable, Identifiable, Hashable {
     var overview: String
     var release_date: String
     var poster_path: String
+    var youtubeTrailer: [FilmYoutubeVideo]?
 }
 
 protocol DataService {
@@ -62,7 +63,7 @@ class GetFilms : ObservableObject, DataService {
         for i in 2...temp{
                 self.loadPages(nb: String(i),{[weak self] film in
                                                 if let film = film {
-                                                    b += film ?? []
+                                                    b += film
                     }
                 })
 
@@ -75,6 +76,26 @@ class GetFilms : ObservableObject, DataService {
 
             print("Finished all requests.")
         }
+    }
+    func test(books: [Film], completionHandler: @escaping(_ genres: [Film]?)->())
+    {
+        var tempBooks = books
+        let group = DispatchGroup()
+        let api = GetYtb()
+        for i in 0...(tempBooks.count - 1) {
+            group.enter()
+            api.loadData(id: String(tempBooks[i].id), {film in
+                if let film = film {
+                    tempBooks[i].youtubeTrailer = film
+                    group.leave()
+                }
+            })
+        }
+        group.notify(queue: .main) {
+            print("Finished all requests.")
+            completionHandler(tempBooks)
+        }
+
     }
     func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var books: [Film] = []
@@ -93,10 +114,17 @@ class GetFilms : ObservableObject, DataService {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
 //                    print (movieData["total_pages"])
                     let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"], options: [])
-                    var testing : [Film] = []
                     let temp: Int!
-                    temp = movieData["total_pages"] as! Int
+                    temp = (movieData["total_pages"] as! Int)
                     books = try! JSONDecoder().decode([Film].self, from: jsonData)
+                    print (books.count)
+                    test(books: books, completionHandler: {[weak self] film in
+                        if let film = film {
+                            print ("film[0].youtubeTrailer?.count", film[0].youtubeTrailer?.count)
+                            completionHandler(film)
+                        }
+                    })
+                    return completionHandler(books)
 //                    forloop(temp: temp, books: books, completionHandler: {[weak self] film in
 //                        if let film = film {
 //                            books += film
@@ -107,7 +135,6 @@ class GetFilms : ObservableObject, DataService {
 //                    print("enter", movieData["results"])
 //                    print ("testinggg",books[0].original_title)
 //                    print ("testinggg",books[0].release_date)
-                        return completionHandler(books)
 
 
 
