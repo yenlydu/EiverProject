@@ -16,7 +16,6 @@
 		1883412C26B3060900FAE199 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412B26B3060900FAE199 /* VideoView.swift */; };
 		1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412E26B43A9900FAE199 /* UImageExtension.swift */; };
 		1883413126B4425600FAE199 /* TrailerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413026B4425600FAE199 /* TrailerModel.swift */; };
-		1883413326B4619400FAE199 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413226B4619400FAE199 /* SwiftUIView.swift */; };
 		1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */; };
 		1883413726B4868A00FAE199 /* FilmDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */; };
 		1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E60B26A1E8CB00846C2F /* eiverApp.swift */; };
@@ -57,7 +56,6 @@
 		1883412B26B3060900FAE199 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		1883412E26B43A9900FAE199 /* UImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageExtension.swift; sourceTree = "<group>"; };
 		1883413026B4425600FAE199 /* TrailerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerModel.swift; sourceTree = "<group>"; };
-		1883413226B4619400FAE199 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersCarousselViewModel.swift; sourceTree = "<group>"; };
 		1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewModel.swift; sourceTree = "<group>"; };
 		1896E60826A1E8CB00846C2F /* eiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +190,6 @@
 				1896E60F26A1E8CE00846C2F /* Assets.xcassets */,
 				1896E61426A1E8CE00846C2F /* Info.plist */,
 				1896E61126A1E8CE00846C2F /* Preview Content */,
-				1883413226B4619400FAE199 /* SwiftUIView.swift */,
 			);
 			path = eiver;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				1860208826ADF7DC000C9DDB /* HomeViewModel.swift in Sources */,
 				1860208226A9739A000C9DDB /* FilmDetailView.swift in Sources */,
 				1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */,
-				1883413326B4619400FAE199 /* SwiftUIView.swift in Sources */,
 				1860208026A4C272000C9DDB /* FilmModel.swift in Sources */,
 				1883413126B4425600FAE199 /* TrailerModel.swift in Sources */,
 				1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */,
