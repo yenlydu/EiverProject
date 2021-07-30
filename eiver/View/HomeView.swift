@@ -41,8 +41,8 @@ struct HomeView: View {
                 }
             }
             if (goToSubBoard) {
-                NavigationLink(destination: ContentViewbIS(film: clickedRow).navigationBarTitle(Text(clickedRow!.original_title), displayMode: .inline), isActive: $goToSubBoard) {}
 
+                NavigationLink(destination: ContentViewbIS(film: clickedRow).navigationBarTitle(Text(clickedRow!.original_title), displayMode: .inline), isActive: $goToSubBoard) {}
             }
             }.onAppear(perform: homeViewModel.getFilms)}
     }

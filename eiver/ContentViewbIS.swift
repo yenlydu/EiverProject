@@ -89,12 +89,13 @@ struct ContentViewbIS: View {
 
     var body: some View {
 //        NavigationView{
+        ScrollView(.vertical, showsIndicators: false) {
         ZStack {
             Color(image?.averageColor ?? .black).opacity(0.3).ignoresSafeArea()
           VStack {
             Image(uiImage: image ?? UIImage())
                 .resizable()        .cornerRadius(10).padding()
-                .frame(width: 200.0, height: 300.0)
+                .frame(width: 180.0, height: 240.0)
 
             HStack{
                 Text("Release date : ").font(.system(size: 20))
@@ -102,10 +103,9 @@ struct ContentViewbIS: View {
             }.padding(.bottom)
             Text(film?.overview ?? "No description").padding()
             if (film?.youtubeTrailer?.count != 0) {
-                Text(String((film?.youtubeTrailer!.count)!))
-//                VideoView(videoId: (film?.youtubeTrailer![0].key)!).frame(maxWidth: UIScreen.main.bounds.width * 0.8,minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: UIScreen.main.bounds.height * 0.3).padding()
-
+                TrailersCaroussel(trailers: (film?.youtubeTrailer!)!)
            }
+          }
           } // VStack
         } // ZStack
     }

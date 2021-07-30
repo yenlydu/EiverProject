@@ -15,6 +15,7 @@ struct VideoView: UIViewRepresentable {
         return WKWebView()
     }
     func updateUIView(_ uiView: WKWebView, context: Context) {
+        print ("videoId ", videoId)
         let player = URL(string: "https://www.youtube.com/embed/\(videoId)")!
         uiView.layer.cornerRadius = 25
         uiView.scrollView.isScrollEnabled = false

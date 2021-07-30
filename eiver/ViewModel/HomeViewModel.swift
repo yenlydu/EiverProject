@@ -10,7 +10,7 @@ import Foundation
 extension HomeView{
     class HomeViewModel: ObservableObject{
         @Published var films = [Film]()
-        let api : DataService
+        private let api : DataService
         
         init(dataService: DataService = GetFilms()) {
             self.api = dataService
