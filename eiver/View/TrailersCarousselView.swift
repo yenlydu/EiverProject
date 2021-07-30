@@ -7,20 +7,19 @@
 
 import SwiftUI
 struct TrailersCaroussel: View {
-    private var trailers: [FilmYoutubeVideo]
-    @State var index = 0
+    @StateObject var trailerViewModel: TrailersCarousselViewModel
 
-    init(trailers: [FilmYoutubeVideo]) {
-        self.trailers = trailers
+    init(trailers: [FilmYoutubeVideo], trailerViewModel: TrailersCarousselViewModel = .init()) {
+        _trailerViewModel = StateObject(wrappedValue: trailerViewModel)
+        trailerViewModel.trailers = trailers
         UITabBar.appearance().backgroundColor = UIColor.red
     }
-    
-    var body: some View {
 
+    var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            TabView(selection: $index) {
-                ForEach(trailers.indices) { index in
-                    VideoView(videoId: trailers[index].key).tag(index)
+            TabView(selection: $trailerViewModel.index) {
+                ForEach(trailerViewModel.trailers.indices) { index in
+                    VideoView(videoId: trailerViewModel.trailers[index].key).tag(index)
                 }
             }.tabViewStyle(PageTabViewStyle()).frame(width: UIScreen.main.bounds.width * 0.9,height:150)
         }

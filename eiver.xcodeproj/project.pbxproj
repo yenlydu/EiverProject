@@ -15,11 +15,18 @@
 		1860208B26AEB771000C9DDB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1860208A26AEB771000C9DDB /* UserNotifications.framework */; };
 		1883412C26B3060900FAE199 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412B26B3060900FAE199 /* VideoView.swift */; };
 		1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412E26B43A9900FAE199 /* UImageExtension.swift */; };
+		1883413126B4425600FAE199 /* TrailerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413026B4425600FAE199 /* TrailerModel.swift */; };
+		1883413326B4619400FAE199 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413226B4619400FAE199 /* SwiftUIView.swift */; };
+		1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */; };
+		1883413726B4868A00FAE199 /* FilmDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */; };
 		1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E60B26A1E8CB00846C2F /* eiverApp.swift */; };
 		1896E61026A1E8CE00846C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1896E60F26A1E8CE00846C2F /* Assets.xcassets */; };
 		1896E61326A1E8CE00846C2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1896E61226A1E8CE00846C2F /* Preview Assets.xcassets */; };
 		1896E61E26A1E8CF00846C2F /* eiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E61D26A1E8CF00846C2F /* eiverTests.swift */; };
 		1896E62926A1E8CF00846C2F /* eiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E62826A1E8CF00846C2F /* eiverUITests.swift */; };
+		5BBCD237476B595FF31444A6 /* Pods_eiver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB93A907F6CEBA6442578731 /* Pods_eiver.framework */; };
+		5F3154F4CF62DED648EB0AF5 /* Pods_eiver_eiverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED2B74F57707DF6DC37F47F /* Pods_eiver_eiverUITests.framework */; };
+		DE6D8328D79063492B874EC8 /* Pods_eiverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3423A0D27CA3889CB2FCD8 /* Pods_eiverTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EFC0C533A5FC072D76DFBEB /* Pods-eiverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiverTests.release.xcconfig"; path = "Target Support Files/Pods-eiverTests/Pods-eiverTests.release.xcconfig"; sourceTree = "<group>"; };
 		1860207826A430A2000C9DDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1860207A26A4C219000C9DDB /* TrailersCarousselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersCarousselView.swift; sourceTree = "<group>"; };
 		1860207F26A4C272000C9DDB /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
@@ -48,6 +56,10 @@
 		1860208A26AEB771000C9DDB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		1883412B26B3060900FAE199 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		1883412E26B43A9900FAE199 /* UImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageExtension.swift; sourceTree = "<group>"; };
+		1883413026B4425600FAE199 /* TrailerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerModel.swift; sourceTree = "<group>"; };
+		1883413226B4619400FAE199 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersCarousselViewModel.swift; sourceTree = "<group>"; };
+		1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewModel.swift; sourceTree = "<group>"; };
 		1896E60826A1E8CB00846C2F /* eiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1896E60B26A1E8CB00846C2F /* eiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eiverApp.swift; sourceTree = "<group>"; };
 		1896E60F26A1E8CE00846C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +71,14 @@
 		1896E62426A1E8CF00846C2F /* eiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eiverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1896E62826A1E8CF00846C2F /* eiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eiverUITests.swift; sourceTree = "<group>"; };
 		1896E62A26A1E8CF00846C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B3423A0D27CA3889CB2FCD8 /* Pods_eiverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eiverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69FE72C02C633D0E5273F64C /* Pods-eiver-eiverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiver-eiverUITests.debug.xcconfig"; path = "Target Support Files/Pods-eiver-eiverUITests/Pods-eiver-eiverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E3743B605D9706B95C5FB36 /* Pods-eiverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiverTests.debug.xcconfig"; path = "Target Support Files/Pods-eiverTests/Pods-eiverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9ED2B74F57707DF6DC37F47F /* Pods_eiver_eiverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eiver_eiverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB93A907F6CEBA6442578731 /* Pods_eiver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eiver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8E806DE4AA4D31DE0F7B7C /* Pods-eiver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiver.release.xcconfig"; path = "Target Support Files/Pods-eiver/Pods-eiver.release.xcconfig"; sourceTree = "<group>"; };
+		EA39A4AA809277B8D9C2D8BD /* Pods-eiver-eiverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiver-eiverUITests.release.xcconfig"; path = "Target Support Files/Pods-eiver-eiverUITests/Pods-eiver-eiverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F6453DE71EFAFBA74B9A21CA /* Pods-eiver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eiver.debug.xcconfig"; path = "Target Support Files/Pods-eiver/Pods-eiver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1860208B26AEB771000C9DDB /* UserNotifications.framework in Frameworks */,
+				5BBCD237476B595FF31444A6 /* Pods_eiver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6D8328D79063492B874EC8 /* Pods_eiverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3154F4CF62DED648EB0AF5 /* Pods_eiver_eiverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				1860207F26A4C272000C9DDB /* FilmModel.swift */,
+				1883413026B4425600FAE199 /* TrailerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				1860208726ADF7DC000C9DDB /* HomeViewModel.swift */,
+				1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */,
+				1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -106,6 +132,7 @@
 		1860208626ADF7A7000C9DDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1860208126A9739A000C9DDB /* FilmDetailView.swift */,
 				1860207A26A4C219000C9DDB /* TrailersCarousselView.swift */,
 				1860207826A430A2000C9DDB /* HomeView.swift */,
 				1883412B26B3060900FAE199 /* VideoView.swift */,
@@ -117,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				1860208A26AEB771000C9DDB /* UserNotifications.framework */,
+				BB93A907F6CEBA6442578731 /* Pods_eiver.framework */,
+				9ED2B74F57707DF6DC37F47F /* Pods_eiver_eiverUITests.framework */,
+				4B3423A0D27CA3889CB2FCD8 /* Pods_eiverTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +167,7 @@
 				1896E62726A1E8CF00846C2F /* eiverUITests */,
 				1896E60926A1E8CB00846C2F /* Products */,
 				1860208926AEB770000C9DDB /* Frameworks */,
+				95FEAB09C7AE95D5C0A35400 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,7 +192,7 @@
 				1896E60F26A1E8CE00846C2F /* Assets.xcassets */,
 				1896E61426A1E8CE00846C2F /* Info.plist */,
 				1896E61126A1E8CE00846C2F /* Preview Content */,
-				1860208126A9739A000C9DDB /* FilmDetailView.swift */,
+				1883413226B4619400FAE199 /* SwiftUIView.swift */,
 			);
 			path = eiver;
 			sourceTree = "<group>";
@@ -192,6 +223,19 @@
 			path = eiverUITests;
 			sourceTree = "<group>";
 		};
+		95FEAB09C7AE95D5C0A35400 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6453DE71EFAFBA74B9A21CA /* Pods-eiver.debug.xcconfig */,
+				BD8E806DE4AA4D31DE0F7B7C /* Pods-eiver.release.xcconfig */,
+				69FE72C02C633D0E5273F64C /* Pods-eiver-eiverUITests.debug.xcconfig */,
+				EA39A4AA809277B8D9C2D8BD /* Pods-eiver-eiverUITests.release.xcconfig */,
+				6E3743B605D9706B95C5FB36 /* Pods-eiverTests.debug.xcconfig */,
+				0EFC0C533A5FC072D76DFBEB /* Pods-eiverTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1896E62D26A1E8CF00846C2F /* Build configuration list for PBXNativeTarget "eiver" */;
 			buildPhases = (
+				5309881A5B6EC2DFEC10E09C /* [CP] Check Pods Manifest.lock */,
 				1896E60426A1E8CB00846C2F /* Sources */,
 				1896E60526A1E8CB00846C2F /* Frameworks */,
 				1896E60626A1E8CB00846C2F /* Resources */,
@@ -216,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1896E63026A1E8CF00846C2F /* Build configuration list for PBXNativeTarget "eiverTests" */;
 			buildPhases = (
+				959321B60859FDE7A8AD4BF6 /* [CP] Check Pods Manifest.lock */,
 				1896E61526A1E8CF00846C2F /* Sources */,
 				1896E61626A1E8CF00846C2F /* Frameworks */,
 				1896E61726A1E8CF00846C2F /* Resources */,
@@ -234,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1896E63326A1E8CF00846C2F /* Build configuration list for PBXNativeTarget "eiverUITests" */;
 			buildPhases = (
+				371EAE59FAF9D2CD7F4C7303 /* [CP] Check Pods Manifest.lock */,
 				1896E62026A1E8CF00846C2F /* Sources */,
 				1896E62126A1E8CF00846C2F /* Frameworks */,
 				1896E62226A1E8CF00846C2F /* Resources */,
@@ -316,6 +363,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		371EAE59FAF9D2CD7F4C7303 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eiver-eiverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5309881A5B6EC2DFEC10E09C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eiver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		959321B60859FDE7A8AD4BF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eiverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1896E60426A1E8CB00846C2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -325,10 +441,14 @@
 				1883412C26B3060900FAE199 /* VideoView.swift in Sources */,
 				1860208826ADF7DC000C9DDB /* HomeViewModel.swift in Sources */,
 				1860208226A9739A000C9DDB /* FilmDetailView.swift in Sources */,
+				1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */,
+				1883413326B4619400FAE199 /* SwiftUIView.swift in Sources */,
 				1860208026A4C272000C9DDB /* FilmModel.swift in Sources */,
+				1883413126B4425600FAE199 /* TrailerModel.swift in Sources */,
 				1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */,
 				1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */,
 				1860207926A430A2000C9DDB /* HomeView.swift in Sources */,
+				1883413726B4868A00FAE199 /* FilmDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +602,7 @@
 		};
 		1896E62E26A1E8CF00846C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6453DE71EFAFBA74B9A21CA /* Pods-eiver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -504,6 +625,7 @@
 		};
 		1896E62F26A1E8CF00846C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD8E806DE4AA4D31DE0F7B7C /* Pods-eiver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -526,6 +648,7 @@
 		};
 		1896E63126A1E8CF00846C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3743B605D9706B95C5FB36 /* Pods-eiverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +671,7 @@
 		};
 		1896E63226A1E8CF00846C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFC0C533A5FC072D76DFBEB /* Pods-eiverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +694,7 @@
 		};
 		1896E63426A1E8CF00846C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69FE72C02C633D0E5273F64C /* Pods-eiver-eiverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -590,6 +715,7 @@
 		};
 		1896E63526A1E8CF00846C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA39A4AA809277B8D9C2D8BD /* Pods-eiver-eiverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

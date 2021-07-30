@@ -1,0 +1,6 @@
+framework module Pods_eiver {
+  umbrella header "Pods-eiver-umbrella.h"
+
+  export *
+  module * { export * }
+}

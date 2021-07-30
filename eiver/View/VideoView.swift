@@ -9,18 +9,23 @@ import Foundation
 import WebKit
 import SwiftUI
 
+/*
+ Construct embed Youtube videos view
+*/
 struct VideoView: UIViewRepresentable {
     let videoId: String
+
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        print ("videoId ", videoId)
         let player = URL(string: "https://www.youtube.com/embed/\(videoId)")!
         uiView.layer.cornerRadius = 25
         uiView.scrollView.isScrollEnabled = false
-        uiView.load(URLRequest(url: player))
+        DispatchQueue.main.async {
+            uiView.load(URLRequest(url: player))
+        }
         uiView.layer.masksToBounds = true
-
     }
 }

@@ -17,6 +17,7 @@ struct eiverApp: App {
         UINavigationBar.appearance().standardAppearance = appearance
 
     }
+
     var body: some Scene {
         WindowGroup {
             HomeView()

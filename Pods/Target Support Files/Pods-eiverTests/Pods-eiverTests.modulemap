@@ -1,0 +1,6 @@
+framework module Pods_eiverTests {
+  umbrella header "Pods-eiverTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

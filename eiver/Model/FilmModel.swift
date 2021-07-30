@@ -21,58 +21,58 @@ protocol DataService {
     func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ())
 }
 
+/**
+ Class that retrieve all films from the TMDB api
+*/
 class GetFilms : ObservableObject, DataService {
-    func loadPages(nb: String, _ completionHandler: @escaping(_ genres: [Film]?) -> ()){
+    /**
+        Api call to get all the specificied page movies
+    */
+    func loadPages(page: String, _ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var books: [Film] = []
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
-                guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=b5c692622885db92d8a2eaa07c8e096c&page=\(nb)") else {
+                guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=b5c692622885db92d8a2eaa07c8e096c&page=\(page)") else {
                 print("Invalid url...")
                 return
             }
             var movieData = [String: Any]()
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
 
+            URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data, error == nil else { return }
                 do {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
                     let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"]!, options: [])
                     books = try! JSONDecoder().decode([Film].self, from: jsonData)
-                    return completionHandler(books)
 
+                    return completionHandler(books)
                 } catch let error as NSError {
                     print(error)
                 }
             }.resume()
         })
-
-
-        
     }
 
     /**
-     Retrieve all movies pages
+     Loop over the pages and retrieve all movie's pages
     */
-
-    func forloop(moviePages: Int!, books: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
+    func forloop(moviePages: Int!, films: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
     {
-        var b = books
+        var films = films
         let myGroup = DispatchGroup()
         myGroup.enter()
 
-        for i in 2...moviePages {
-                self.loadPages(nb: String(i), { film in
+        for page in 2...moviePages {
+                self.loadPages(page: String(page), { film in
                         if let film = film {
-                            b += film
+                            films += film
                         }
                     }
                 )
-
         }
         myGroup.leave()
         myGroup.wait()
         myGroup.notify(queue: .main) {
-            completionHandler(b)
+            completionHandler(films)
             print("Requests: Got all movies pages.")
         }
     }
@@ -80,32 +80,11 @@ class GetFilms : ObservableObject, DataService {
     /**
      Calls TMDB api's to retrieve youtube trailers for each films
     */
-    func loadYoutubeTrailers(books: [Film], completionHandler: @escaping(_ genres: [Film]?)->())
-    {
-        var tempBooks = books
-        let group = DispatchGroup()
-        let api = GetYtb()
-        for i in 0...(tempBooks.count - 1) {
-            group.enter()
-            api.loadData(id: String(tempBooks[i].id), {film in
-                if let film = film {
-                    tempBooks[i].youtubeTrailer = film
-                    group.leave()
-                }
-            })
-        }
-        group.notify(queue: .main) {
-            print("Requests: Loaded movies youtube trailers.")
-            completionHandler(tempBooks)
-        }
-
-    }
-
     /**
      Load all types of datas (movies, youtube trailers)
     */
     func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ()){
-        var books: [Film] = []
+        var films: [Film] = []
             print("entered load data")
                 guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=b5c692622885db92d8a2eaa07c8e096c") else {
                 print("Invalid url...")
@@ -119,8 +98,8 @@ class GetFilms : ObservableObject, DataService {
                 do {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
                     let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"] as Any, options: [])
-                    books = try! JSONDecoder().decode([Film].self, from: jsonData)
-                    print (books.count)
+                    let youtubeTrailersApi = GetTrailers()
+                    films = try! JSONDecoder().decode([Film].self, from: jsonData)
 //                    let moviePages: Int!
 //                    moviePages = (movieData["total_pages"] as! Int)
 //                    forloop(moviePages: moviePages, books: books, completionHandler: {[weak self] film in
@@ -129,7 +108,7 @@ class GetFilms : ObservableObject, DataService {
 //                        }
 //                    })
                     //Load youtube trailers and store datas
-                    loadYoutubeTrailers(books: books, completionHandler: {film in
+                    youtubeTrailersApi.loadYoutubeTrailers(films: films, completionHandler: {film in
                         if let film = film {
                             completionHandler(film)
                         }
