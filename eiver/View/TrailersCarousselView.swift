@@ -16,13 +16,7 @@ struct TrailersCaroussel: View {
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            TabView(selection: $trailerViewModel.index) {
-                ForEach(trailerViewModel.trailers.indices) { index in
-                    VideoView(videoId: trailerViewModel.trailers[index].key).tag(index)
-                }
-            }.tabViewStyle(PageTabViewStyle()).frame(width: UIScreen.main.bounds.width * 0.9,height:150)
-        }
+
     }
 }
 

@@ -12,7 +12,7 @@ struct Film: Codable, Identifiable, Hashable {
     let id : Int
     var original_title: String
     var overview: String
-    var release_date: String
+    var release_date: String?
     var poster_path: String
     var youtubeTrailer: [FilmYoutubeVideo]?
 }

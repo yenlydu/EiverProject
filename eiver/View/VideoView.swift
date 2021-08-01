@@ -23,9 +23,8 @@ struct VideoView: UIViewRepresentable {
         let player = URL(string: "https://www.youtube.com/embed/\(videoId)")!
         uiView.layer.cornerRadius = 25
         uiView.scrollView.isScrollEnabled = false
-        DispatchQueue.main.async {
-            uiView.load(URLRequest(url: player))
-        }
+        uiView.load(URLRequest(url: player))
         uiView.layer.masksToBounds = true
+        print("æfter")
     }
 }

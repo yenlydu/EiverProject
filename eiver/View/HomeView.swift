@@ -12,6 +12,7 @@ struct HomeView : View {
 
     init(viewModel: HomeViewModel = .init()) {
         _homeViewModel = StateObject(wrappedValue: viewModel)
+        homeViewModel.getFilms()
     }
 
     var searchField: some View {
@@ -49,7 +50,6 @@ struct HomeView : View {
                 if (homeViewModel.goToSubBoard) {
                     NavigationLink(destination: FilmDetailView(film: homeViewModel.clickedRow).navigationBarTitle(Text(homeViewModel.clickedRow!.original_title), displayMode: .inline), isActive: $homeViewModel.goToSubBoard) {}
                 }
-            }.onAppear(perform: homeViewModel.getFilms)}
+            }
     }
-
-}
+    }}

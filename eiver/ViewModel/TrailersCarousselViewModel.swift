@@ -8,8 +8,6 @@
 import Foundation
 
 class TrailersCarousselViewModel : ObservableObject {
-    @Published var trailers: [FilmYoutubeVideo] = []
-    @Published var index = 0
 
     init() {
     }

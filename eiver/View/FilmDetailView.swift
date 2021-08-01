@@ -23,21 +23,27 @@ struct FilmDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             ZStack {
-                VStack {
+                LazyVStack {
                     Image(uiImage: filmDetailViewModel.image ?? UIImage())
                         .resizable().cornerRadius(10).padding()
                         .frame(width: 180.0, height: 240.0)
-                    HStack{
+                    LazyHStack{
                         Text("Release date : ").font(.system(size: 20))
-                        Text (filmDetailViewModel.film!.release_date).italic()
+                        Text (filmDetailViewModel.film!.release_date ?? "e").italic()
                     }.padding(.bottom)
                     Text(filmDetailViewModel.film?.overview ?? "No description").padding()
-                    if (filmDetailViewModel.film?.youtubeTrailer?.count != 0) {
-                        TrailersCaroussel(trailers: (filmDetailViewModel.film?.youtubeTrailer!)!)
-                   }
+
+                    ScrollView(.vertical, showsIndicators: false) {
+                        TabView(selection: $filmDetailViewModel.index) {
+                            ForEach((filmDetailViewModel.film?.youtubeTrailer?.indices)!) { index in
+                                VideoView(videoId: (filmDetailViewModel.film?.youtubeTrailer![index].key)!).tag(index)
+                            }
+
+                        }.tabViewStyle(PageTabViewStyle()).frame(width: UIScreen.main.bounds.width * 0.9,height:150)
+                    }
+
                 }
             }
-        }.frame(width: UIScreen.main.bounds.width).background(Color(filmDetailViewModel.image?.averageColor ?? .black).opacity(0.3).edgesIgnoringSafeArea(.all)
-)
+        }.frame(width: UIScreen.main.bounds.width).background(Color(filmDetailViewModel.image?.averageColor ?? .black).opacity(0.3).edgesIgnoringSafeArea(.all))
     }
 }
