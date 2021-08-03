@@ -14,9 +14,7 @@
 		1860208B26AEB771000C9DDB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1860208A26AEB771000C9DDB /* UserNotifications.framework */; };
 		1883412C26B3060900FAE199 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412B26B3060900FAE199 /* VideoView.swift */; };
 		1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883412E26B43A9900FAE199 /* UImageExtension.swift */; };
-		1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */; };
 		1883413726B4868A00FAE199 /* FilmDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */; };
-		1891ED5726B6DE6F00598B0F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891ED5626B6DE6F00598B0F /* ImageLoader.swift */; };
 		1891ED5926B700F700598B0F /* TrailerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891ED5826B700F700598B0F /* TrailerModel.swift */; };
 		1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E60B26A1E8CB00846C2F /* eiverApp.swift */; };
 		1896E61026A1E8CE00846C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1896E60F26A1E8CE00846C2F /* Assets.xcassets */; };
@@ -54,9 +52,7 @@
 		1860208A26AEB771000C9DDB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		1883412B26B3060900FAE199 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		1883412E26B43A9900FAE199 /* UImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImageExtension.swift; sourceTree = "<group>"; };
-		1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersCarousselViewModel.swift; sourceTree = "<group>"; };
 		1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewModel.swift; sourceTree = "<group>"; };
-		1891ED5626B6DE6F00598B0F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		1891ED5826B700F700598B0F /* TrailerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerModel.swift; sourceTree = "<group>"; };
 		1896E60826A1E8CB00846C2F /* eiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1896E60B26A1E8CB00846C2F /* eiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eiverApp.swift; sourceTree = "<group>"; };
@@ -121,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				1860208726ADF7DC000C9DDB /* HomeViewModel.swift */,
-				1883413426B47F0B00FAE199 /* TrailersCarousselViewModel.swift */,
 				1883413626B4868A00FAE199 /* FilmDetailViewModel.swift */,
 			);
 			path = ViewModel;
@@ -131,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				1860208126A9739A000C9DDB /* FilmDetailView.swift */,
-				1891ED5626B6DE6F00598B0F /* ImageLoader.swift */,
 				1860207826A430A2000C9DDB /* HomeView.swift */,
 				1883412B26B3060900FAE199 /* VideoView.swift */,
 			);
@@ -435,10 +429,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1883412C26B3060900FAE199 /* VideoView.swift in Sources */,
-				1891ED5726B6DE6F00598B0F /* ImageLoader.swift in Sources */,
 				1860208826ADF7DC000C9DDB /* HomeViewModel.swift in Sources */,
 				1860208226A9739A000C9DDB /* FilmDetailView.swift in Sources */,
-				1883413526B47F0B00FAE199 /* TrailersCarousselViewModel.swift in Sources */,
 				1860208026A4C272000C9DDB /* FilmModel.swift in Sources */,
 				1883412F26B43A9900FAE199 /* UImageExtension.swift in Sources */,
 				1896E60C26A1E8CB00846C2F /* eiverApp.swift in Sources */,

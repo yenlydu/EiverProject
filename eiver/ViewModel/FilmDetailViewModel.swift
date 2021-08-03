@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+/*
+ ViewModel: View Model for FilmDetailView.swift
+*/
 class FilmDetailViewModel : ObservableObject {
     @Published var film: Film?
     @Published var image : UIImage?

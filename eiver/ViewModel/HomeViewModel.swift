@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ ViewModel: View Model for HomeView.swift
+*/
 class HomeViewModel: ObservableObject {
     @Published var films = [Film]()
     @Published var textInput = ""

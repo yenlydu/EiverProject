@@ -6,9 +6,12 @@
 //
 import SwiftUI
 
+/*
+ View: Construct film detail view (information on the clicked film, poster, release date, synopsis and some trailers)
+*/
 struct FilmDetailView: View {
     @StateObject var filmDetailViewModel: FilmDetailViewModel
-
+    
     init(film: Film?, filmDetailViewModel: FilmDetailViewModel = .init()) {
         _filmDetailViewModel = StateObject(wrappedValue: filmDetailViewModel)
         filmDetailViewModel.film = film

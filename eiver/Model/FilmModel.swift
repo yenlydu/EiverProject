@@ -17,17 +17,12 @@ struct Film: Codable, Identifiable, Hashable {
     var youtubeTrailer: [FilmYoutubeVideo]?
 }
 
-protocol DataService {
-    func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ())
-}
-
 /**
- Class that retrieve all films from the TMDB api
+ Model: Retrieves movies from the TMDB api
 */
 class GetFilms : ObservableObject, DataService {
-    /**
-        Api call to get all the specificied page movies
-    */
+
+    
     func loadPages(page: String, _ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var books: [Film] = []
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
@@ -52,9 +47,6 @@ class GetFilms : ObservableObject, DataService {
         })
     }
 
-    /**
-     Loop over the pages and retrieve all movie's pages
-    */
     func forloop(moviePages: Int!, films: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
     {
         var films = films
@@ -76,13 +68,7 @@ class GetFilms : ObservableObject, DataService {
             print("Requests: Got all movies pages.")
         }
     }
-    
-    /**
-     Calls TMDB api's to retrieve youtube trailers for each films
-    */
-    /**
-     Load all types of datas (movies, youtube trailers)
-    */
+
     func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var films: [Film] = []
             print("entered load data")
@@ -119,4 +105,9 @@ class GetFilms : ObservableObject, DataService {
             }.resume()
         
     }
+}
+
+
+protocol DataService {
+    func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ())
 }

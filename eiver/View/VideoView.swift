@@ -10,7 +10,7 @@ import WebKit
 import SwiftUI
 
 /*
- Construct embed Youtube videos view
+ View: Construct embed Youtube videos view
 */
 struct VideoView: UIViewRepresentable {
     let videoId: String

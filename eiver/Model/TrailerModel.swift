@@ -6,11 +6,6 @@
 //
 import Foundation
 
-protocol DataServiceYtb
-{
-    func loadYoutubeTrailers(films: [Film], completionHandler: @escaping(_ genres: [Film]?)->())
-    func callTrailersApi(id: String, _ completionHandler: @escaping(_ genres: [FilmYoutubeVideo]?) -> ())
-}
 
 struct FilmYoutubeVideo: Codable, Identifiable, Hashable
 {
@@ -20,6 +15,10 @@ struct FilmYoutubeVideo: Codable, Identifiable, Hashable
     var type: String
     var published_at: String
 }
+
+/**
+ Model: Retrieves trailers from the TMDB api
+*/
 
 class GetTrailers : ObservableObject, DataServiceYtb
 {
@@ -63,4 +62,10 @@ class GetTrailers : ObservableObject, DataServiceYtb
             return completionHandler(tempFilms)
         }
     }
+}
+
+protocol DataServiceYtb
+{
+    func loadYoutubeTrailers(films: [Film], completionHandler: @escaping(_ genres: [Film]?)->())
+    func callTrailersApi(id: String, _ completionHandler: @escaping(_ genres: [FilmYoutubeVideo]?) -> ())
 }
