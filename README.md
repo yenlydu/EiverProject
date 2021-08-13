@@ -1,6 +1,7 @@
 # EiverProject
 
 - The goal of this project is to retrieve movies and its information from the TMDB Api
+- SwiftUI
 - MVVM architecture
 
 ## Project description
