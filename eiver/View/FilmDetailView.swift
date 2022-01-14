@@ -19,7 +19,9 @@ struct FilmDetailView: View {
         let data = try? Data(contentsOf: url)
         //Le chargement de l'image est en synchrone, ce qui fait que la page prend du temps a charger
         if let imageData = data {
-            filmDetailViewModel.image = UIImage(data: imageData)!
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                filmDetailViewModel.image = UIImage(data: imageData)!
+            }
         }
     }
 
