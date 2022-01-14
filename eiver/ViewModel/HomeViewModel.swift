@@ -24,21 +24,22 @@ class HomeViewModel: ObservableObject {
     }
 
     func getFilms() {
-        var timer: Timer?
+//        var timer: Timer?
         let group = DispatchGroup()
         //Go back to main queue
         api.loadData({[weak self] film in
-            timer = Timer.scheduledTimer(
-                withTimeInterval: 0.01,
-                repeats: true
-            ) { _ in            group.enter()
+//            timer = Timer.scheduledTimer(
+//                withTimeInterval: 0.01,
+//                repeats: true
+//            ) { _ in
+                group.enter()
             if let film = film {
                 group.leave()
                 group.notify(queue: .main) {
                     self!.films = film
                 }
             }
-            }
+//            }
         })
         self.objectWillChange.send()
 
