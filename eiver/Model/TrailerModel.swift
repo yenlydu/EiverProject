@@ -6,7 +6,6 @@
 //
 import Foundation
 
-
 struct FilmYoutubeVideo: Codable, Identifiable, Hashable
 {
     let id : String

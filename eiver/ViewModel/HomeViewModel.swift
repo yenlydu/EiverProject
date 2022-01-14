@@ -10,6 +10,7 @@ import Foundation
 /*
  ViewModel: View Model for HomeView.swift
 */
+
 class HomeViewModel: ObservableObject {
     @Published var films = [Film]()
     @Published var textInput = ""
@@ -25,6 +26,7 @@ class HomeViewModel: ObservableObject {
     func getFilms() {
         var timer: Timer?
         let group = DispatchGroup()
+        //Go back to main queue
         api.loadData({[weak self] film in
             timer = Timer.scheduledTimer(
                 withTimeInterval: 0.01,

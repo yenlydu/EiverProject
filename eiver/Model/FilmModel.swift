@@ -20,9 +20,8 @@ struct Film: Codable, Identifiable, Hashable {
 /**
  Model: Retrieves movies from the TMDB api
 */
-class GetFilms : ObservableObject, DataService {
 
-    
+class GetFilms : ObservableObject, DataService {
     func loadPages(page: String, _ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var books: [Film] = []
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
@@ -49,6 +48,7 @@ class GetFilms : ObservableObject, DataService {
 
     func forloop(moviePages: Int!, films: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
     {
+        //Check the force unwrap movie pages variable
         var films = films
         let myGroup = DispatchGroup()
         myGroup.enter()
@@ -77,8 +77,8 @@ class GetFilms : ObservableObject, DataService {
                 return
             }
             var movieData = [String: Any]()
-            
-        URLSession.shared.dataTask(with: url) { [self] data, response, error in
+        //before: [self] -> can cause a memory leak until URLSession.shared.dataTask closure is closed => [weak self]
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
 
                 guard let data = data, error == nil else { return }
                 do {
@@ -93,6 +93,7 @@ class GetFilms : ObservableObject, DataService {
 //                            books += film
 //                        }
 //                    })
+
                     //Load youtube trailers and store datas
                     youtubeTrailersApi.loadYoutubeTrailers(films: films, completionHandler: {film in
                         if let film = film {
@@ -100,6 +101,7 @@ class GetFilms : ObservableObject, DataService {
                         }
                     })
                 } catch let error as NSError {
+                    //Call completion handler,
                     print(error)
                 }
             }.resume()
