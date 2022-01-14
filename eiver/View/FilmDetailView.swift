@@ -15,14 +15,23 @@ struct FilmDetailView: View {
     init(film: Film?, filmDetailViewModel: FilmDetailViewModel = .init()) {
         _filmDetailViewModel = StateObject(wrappedValue: filmDetailViewModel)
         filmDetailViewModel.film = film
-        let url = URL(string: "https://image.tmdb.org/t/p/original/\(film!.poster_path)")!
-        let data = try? Data(contentsOf: url)
-        //Le chargement de l'image est en synchrone, ce qui fait que la page prend du temps a charger
-        if let imageData = data {
-            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-                filmDetailViewModel.image = UIImage(data: imageData)!
+        guard let url = URL(string: "https://image.tmdb.org/t/p/original/\(film!.poster_path)") else { return }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+
+            DispatchQueue.main.async {
+                filmDetailViewModel.image = UIImage(data: data)!
             }
-        }
+
+            }.resume()
+//        let url = URL(string: )!
+//        let data = try? Data(contentsOf: url)
+//        //Le chargement de l'image est en synchrone, ce qui fait que la page prend du temps a charger
+//        if let imageData = data {
+//            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+//            }
+//        }
     }
 
     var body: some View {
