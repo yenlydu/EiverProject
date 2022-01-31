@@ -29,7 +29,7 @@ class GetTrailers : ObservableObject, DataServiceYtb
             }
 
             URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else {return}
+                guard let data = data, response != nil, error == nil else {return}
                 do {
                     var films: [FilmYoutubeVideo] = []
                     let movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
@@ -38,6 +38,7 @@ class GetTrailers : ObservableObject, DataServiceYtb
                     return completionHandler(films)
                 } catch let error as NSError {
                     print(error)
+                    completionHandler([])
                 }
             }.resume()
     }

@@ -32,7 +32,7 @@ class GetFilms : ObservableObject, DataService {
             var movieData = [String: Any]()
 
             URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else { return }
+                guard let data = data, response != nil, error == nil else { return }
                 do {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
                     let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"]!, options: [])
@@ -41,12 +41,13 @@ class GetFilms : ObservableObject, DataService {
                     return completionHandler(books)
                 } catch let error as NSError {
                     print(error)
+                    completionHandler([])
                 }
             }.resume()
         })
     }
 
-    func forloop(moviePages: Int!, films: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
+    func forloop(moviePages: Int, films: [Film], completionHandler: @escaping(_ genres: [Film]?) -> ())
     {
         //Check the force unwrap movie pages variable
         var films = films
@@ -71,16 +72,14 @@ class GetFilms : ObservableObject, DataService {
 
     func loadData(_ completionHandler: @escaping(_ genres: [Film]?) -> ()){
         var films: [Film] = []
-            print("entered load data")
-                guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=b5c692622885db92d8a2eaa07c8e096c") else {
-                print("Invalid url...")
-                return
-            }
-            var movieData = [String: Any]()
+        guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=b5c692622885db92d8a2eaa07c8e096c") else {
+            print("Invalid url...")
+            return
+        }
+        var movieData = [String: Any]()
         //before: [self] -> can cause a memory leak until URLSession.shared.dataTask closure is closed => [weak self]
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-
-                guard let data = data, error == nil else { return }
+                guard let data = data, response != nil, error == nil else { return }
                 do {
                     movieData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
                     let jsonData = try JSONSerialization.data(withJSONObject: movieData["results"] as Any, options: [])
@@ -101,8 +100,9 @@ class GetFilms : ObservableObject, DataService {
                         }
                     })
                 } catch let error as NSError {
-                    //Call completion handler,
+                    //Call completion handler, to finish closure, because if enter here, and completion handler is not called, it will not enter the function
                     print(error)
+                    completionHandler([])
                 }
             }.resume()
         

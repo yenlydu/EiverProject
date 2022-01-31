@@ -18,8 +18,8 @@ struct FilmDetailView: View {
         guard let url = URL(string: "https://image.tmdb.org/t/p/original/\(film!.poster_path)") else { return }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-
+            guard let data = data, response != nil, error == nil else { return }
+            //BEFORE: was loading image view synchrounously within the same thread (commented section), now: loading it asynchrounously
             DispatchQueue.main.async {
                 filmDetailViewModel.image = UIImage(data: data)!
             }
@@ -43,14 +43,14 @@ struct FilmDetailView: View {
                         .frame(width: 180.0, height: 240.0)
                     LazyHStack{
                         Text("Release date : ").font(.system(size: 20))
-                        Text (filmDetailViewModel.film!.release_date ?? "e").italic()
+                        Text (filmDetailViewModel.film!.release_date ?? "No release date").italic()
                     }.padding(.bottom)
                     Text(filmDetailViewModel.film?.overview ?? "No description").padding()
 
                     ScrollView(.vertical, showsIndicators: false) {
                         TabView(selection: $filmDetailViewModel.index) {
                             ForEach((filmDetailViewModel.film?.youtubeTrailer?.indices)!) { index in
-                                VideoView(videoId: (filmDetailViewModel.film?.youtubeTrailer![index].key)!).tag(index)
+                                VideoView(videoId: (filmDetailViewModel.film?.youtubeTrailer?[index].key)!).tag(index)
                             }
 
                         }.tabViewStyle(PageTabViewStyle()).frame(width: UIScreen.main.bounds.width * 0.9,height:150)
